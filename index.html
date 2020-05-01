@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Homework VIII</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+<style>
+    
+    html {
+        background-color: #000000;
+    }
+    
+    body {
+        width: 950px;
+        margin: 0 auto;
+        background-color: #FFFFFF;
+        padding-top: 1px;
+    }
+    
+    #titletext {
+        font-family: 'Work Sans', sans-serif;
+        padding-left: 130px;
+    }
+    
+    .photo {
+        background-image: linear-gradient(to bottom right, #51B6B6, #0F9595, #17719D);
+        padding-left: 70px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .donate {
+        color: #F8F8F8;
+        font-size: 30px;
+        float: right;
+        margin-right: 65px;
+        margin-top: 140px;
+        padding: 20px;
+        padding-left: 25px;
+        border: solid 5px #F8F8F8;
+        border-radius: 30px;
+    }
+    a.donatelink, a.donatelink:hover {
+        text-decoration: none;
+        color: #F8F8F8;
+    }
+    
+    
+    img {
+        box-shadow: 0px 0px 10px rgba(0,0,0,.25);
+    }
+    
+    .content {
+        padding-left: 130px;
+        padding-right: 130px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    
+    h1 {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 24px;
+        text-decoration: underline;
+        font-weight: 400;
+        padding-top: 20px;
+    }
+    
+    p {
+        font-family: 'Work Sans', sans-serif;
+    }
+    
+    .Q {
+        font-size: 18px;
+        line-height: 100%;
+    }
+    
+    .A {
+        font-size: 16px;
+        line-height: 30%
+    }
+    .numbers {
+        line-height: 200%;
+    }
+    
+    #hide {
+        text-align: center;
+        font-size: 17px;
+    }
+    .button {
+        text-align: center;
+    }
+    button {
+        font-size: 10px;
+    }
+    
+    a {
+        color: #17719D;
+    }
+    
+    a:hover {
+        color: #51B6B6;
+    }
+    
+    footer {
+        text-align: center;
+        padding-bottom: 25px;
+    }
+    .validators {
+        text-decoration: none;
+    }
+    .val {
+        box-shadow: none;
+    }
+    
+    
+</style>
+    
+<script>
+   
+<!--TITLE GROWTH-->
+    var textsize = 0;
+    var maxsize = 50;
+    
+    function Title() {
+        if (textsize<maxsize) {
+            document.getElementById('title').style.fontSize=textsize+"px"
+            textsize++
+            timer=setTimeout("Title()", 100)
+        }
+    }
+    
+    function stopTimer() {
+        clearTimeout(timer)
+    }
+    
+<!--IMAGES SWITCH-->    
+    function switchImg() {
+        document.getElementById("image").src="images/img_right.jpg"
+    }
+    
+    function restoreImg() {
+        document.getElementById("image").src="images/img_homeless.jpg"
+    }
+    
+    function thirdImg() {
+        document.getElementById("image").src="images/img_sympathy.jpg"
+    }
+    
+<!--ESTIMATE FOR STATISTICS-->
+    function statGuess(textstring) {
+        if (textstring == 69) {
+            alert("That is correct. 69% of homeless people in San Francisco had housing in the city before becoming homeless. 72% of homeless individuals have been in the city for at least five years. Source: atthecrossroads.org");
+        }
+        else if (textstring >= 1 && textstring < 30) {
+            alert("That's far too low.");
+        }
+        else if (textstring >= 30 && textstring <= 68) {
+            alert("The answer is higher.");
+        }
+        else if (textstring > 69 && textstring <= 100) {
+            alert("The answer is lower.");
+        }
+        else {
+            alert("Please enter a whole number between 1 and 100.");
+        }
+    }
+    
+<!--WEBSITE NAVIGATION-->
+    function externalSite(dropdown) {
+        var index = dropdown.resources.selectedIndex
+        location = dropdown.resources.options[index].value;
+    }
+    
+<!--POPUP SITE-->
+    function new_window(url) {
+        link = window.open(url, '_new', 'toolbar=0,menubar=0,scrollbars=0,status=0,resizable=0,top=1,left=415,fullscreen=0,Height=600px,Width=650px', '')
+    }
+    
+    
+</script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!--<script src="http://code.jquery.com/jquery-1.10.1.js"></script>-->
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+               $("#hide").fadeTo("slow",0.25); 
+                $("#image").attr("src","images/img_sympathy.jpg");
+                //$("#image").hover(function(){
+                //    $("#image").attr("src","images/img_sympathy.jpg");
+                //}
+                //function(){
+                //    $("#image").attr("src","images/img_sympathy.jpg"); 
+                //});
+            });
+        });    
+    </script>
+    
+</head>
+
+<body onload="Title()" onunload="stopTimer()">
+    
+    <p id="titletext"><span id="title">Get Informed; Get Involved.</span></p>
+    
+    <div class="photo">
+    <img src="images/img_homeless.jpg" width="491" height="368" alt="Image" id="image" onmouseover="switchImg()" onmouseout="restoreImg()">
+    <p class="donate"><a href="https://endhomelessness.org/help-end-homelessness/support-our-work/" class="donatelink" target="_blank">Donate Today.</a></p>
+    </div>
+    
+    <div class="content">
+        <h1>True or False:</h1>
+        <p class="Q">There is nothing you can do to help with homelessness.</p>
+        <p class="A"><a href="javascript:alert('False. There are numerous ways to get involved and make a difference. Several options include volunteering, donating money, educating yourself on both causes of homelessness and laws that impact homeless individuals. You can also take time to get to know homeless people in the neighborhoods you frequent. A little conversation can go a long way. Source: atthecrossroads.org')">Click here for the answer.</a></p>
+        <br>
+        
+    <h1>Statistics:</h1>
+        <p class="Q">As of November 8th, 2018, estimate (to the nearest whole number, excluding the % symbol) the percentage of people who had housing in San Francisco before they became homeless:</p>
+        <form>
+        <input type="text" name="guess" size="5">
+        <input type="button" name="submit" value="Check Estimate" onclick="statGuess(form.guess.value)">
+        </form>
+        <br>
+        
+    <h1>Resources:</h1>
+        <p class="Q">Use the drop down list to navigate to resources regarding homelessness.</p>
+        <form>
+        <select name="resources">
+            <option selected="selected">--Choose--</option>
+            <option value="https://projects.sfchronicle.com/sf-homeless/how-to-help/">SF Chronicle</option>
+            <option value="https://sf311.org/homeless-issues-all-matters">SF311</option>
+            <option value="https://sfmohcd.org/homelessness-support-and-resources">Mayor's Office</option>
+            <option value="https://www.sfhsa.org/services/housing-shelter">Human Services Agency</option>
+        </select>
+        <input type="button" value="Go" onclick="externalSite(this.form)">
+        </form>
+        <br>
+        
+    <h1>2017 Count Numbers:</h1>
+        <p class="A"><a class="numbers" href="#" onclick="new_window('http://hsh.sfgov.org/wp-content/uploads/2017/06/San-Francisco-PIT-Executive-Summary-FINAL-6.21.17.pdf')">Click Here</a> to see 2017 statistics on homelessnes in San Francisco.</p>
+        <br>
+        
+    
+    <h1 id="hide">Sympathy Doesn't Save Lives.</h1>
+    <div class="button"><button type="button">Click to fade text and change image.</button></div>
+    
+    </div>
+    
+    <footer>
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fhills.ccsf.edu%2F~sjokela%2FJokela_Assignment8_HTML%2F" class="validators">
+        <img src="images/html.png" width="35" height="36" alt="HTML5" title="HTML5" class="val">
+        </a>&nbsp;
+    
+        <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fhills.ccsf.edu%2F~sjokela%2FJokela_Assignment8_HTML%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" class="validators">
+        <img src="images/css.png" width="35" height="36" alt="CSS3" title="CSS3" class="val">
+        </a>
+    </footer>
+    
+</body>
+</html>
