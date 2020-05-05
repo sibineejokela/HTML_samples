@@ -6,4 +6,4 @@
 Most CSS is coded into the head of the index. HTML_CSS_video-gif-music-iframe is the exception and contains a stylesheet link.
 The stylesheet can also be found in the folder.</p>
 
-<p>View the sample site from the HTML_CSS_window.open-image-mapping folder <a href="https://sibineejokela.github.io/nutrition_sample_website/">using this link.</a></p>
+<p>View the sample site from the HTML_CSS_window.open-image-mapping folder <a href="https://sibineejokela.github.io/nutrition_sample_website/" target="_blank">using this link.</a></p>
